@@ -1,12 +1,13 @@
-- task: Kubernetes@1
+- task: K8S@1
   inputs:
     connectionType: 'Azure Resource Manager'
     azureSubscriptionEndpoint: 'Pay-As-You-Go(d2ce8592-e2e8-487f-9130-e2b5342b5a35)'
     azureResourceGroup: '10K8'
     kubernetesCluster: '10microK8s'
+    useClusterAdmin: true
     namespace: 'default'
     command: 'apply'
     useConfigurationFile: true
-    configuration: 'release/kubernetes-manifests.yaml'
+    configuration: 'main'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
